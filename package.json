@@ -1,0 +1,26 @@
+{
+  "name": "newsapi",
+  "version": "1.0.0",
+  "description": "api for news headlines",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles --forceExit",
+    "start": "micro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanlangbrown/newsAPI.git"
+  },
+  "author": "Sean Lang-Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seanlangbrown/newsAPI/issues"
+  },
+  "homepage": "https://github.com/seanlangbrown/newsAPI#readme",
+  "dependencies": {
+    "jest": "^23.4.1",
+    "lodash": "^4.17.10",
+    "micro": "^9.3.2",
+    "supertest": "^3.1.0"
+  }
+}
