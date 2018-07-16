@@ -11,12 +11,6 @@ module.exports = async (req, res) => {
     send(res, statusCode, data = null);
   }
 
-  const headlines = {
-    data: [
-      {title: 'itemOne'},
-      {title: 'itemTwo'}
-    ]
-  };
   statusCode = 200;
   send(res, statusCode, data = query);
 }

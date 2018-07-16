@@ -20,7 +20,16 @@ disconnect = async () => {
 module.exports.latest = async (n) => {
   const query = await db.query('SELECT * FROM articles ORDER BY published LIMIT $1', [n])
   .then(res => {
-    return res.rows;
+    return res.rows.map((article) => {
+      return {
+        id: article.article_id,
+        title: article.title,
+        author: article.author,
+        date: article.published.getDate(),
+        month: article.published.getMonth(),
+        year: article.published.getUTCFullYear()
+      }
+    });
   })
   .catch(e => {
     console.log(e.stack);
