@@ -7,19 +7,19 @@ process.env.PGDATABASE = 'newsapi';
 const db  = new pg.Client();
 
 connect = async () => {
-  await db.connect();
+  await db.connect((err) => {
+    if (err) {
+      console.log('db connection error:', err);
+    }
+  });
   console.log('connected to database', process.env.PGDATABASE);
 }
 connect();
 
-disconnect = async () => {
-  await db.connect();
-  console.log('disconnected');
-}
-
 module.exports.latest = async (n) => {
-  const query = await db.query('SELECT * FROM articles ORDER BY published LIMIT $1', [n])
+  const query = await db.query('SELECT * FROM articles ORDER BY published DESC LIMIT $1', [n])
   .then(res => {
+    db.end();
     return res.rows.map((article) => {
       return {
         id: article.article_id,
