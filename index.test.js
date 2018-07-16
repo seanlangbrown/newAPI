@@ -28,7 +28,7 @@ describe ('API Endpoints', () => {
 
     let rootRequest = await superAPI.get('/');
 
-    console.log(rootRequest);
+    expect(rootRequest.body.length).toBe(10);
 
     expect(rootRequest.statusCode).toBe(200); //error or not?
 
