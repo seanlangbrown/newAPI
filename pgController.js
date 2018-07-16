@@ -24,6 +24,7 @@ module.exports.latest = async (n) => {
       return {
         id: article.article_id,
         title: article.title,
+        publication: article.publication,
         author: article.author,
         date: article.published.getDate(),
         month: article.published.getMonth(),
