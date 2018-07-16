@@ -1,13 +1,13 @@
 # newsAPI
 
-##About
+## About
 API for news headlines
 
 Article headlines and content can be retrieved from a postrgres database
 
 Article data is from Kaggle: https://www.kaggle.com/snapcrack/all-the-news/downloads/articles1.csv/4
 
-##Usage
+## Usage
 '/' responds with the 10 most recent headlines in the database:
 `{
 	id,
@@ -20,11 +20,12 @@ Article data is from Kaggle: https://www.kaggle.com/snapcrack/all-the-news/downl
 }`
 
 
-##Installation
+## Installation
 
 Setup:
 1) Seed postgres database
-  - first save https://www.kaggle.com/snapcrack/all-the-news/downloads/articles1.csv/4
+  - first save https://www.kaggle.com/snapcrack/all-the-news/downloads/articles1.csv/4 to project root directory.
+  
   `psql -d postgres -a -f seedNewsAPI.sql`
 
 
@@ -35,7 +36,7 @@ Setup:
 4) `npm start`
 
 
-##Future Work
+## Future Work
 
 - Research open handles at end of jest tests, most likely caused by improper end() of node-postgres connections.  I've done some research, but have not found a solution yet.
 
