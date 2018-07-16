@@ -1,6 +1,7 @@
 const supertest = require('supertest');
 const fs = require('fs');
 const micro = require('micro');
+const pgController = require('./pgController');
 //const pgController = require('');
 const newsAPI = require('./index.js');
 
@@ -8,6 +9,7 @@ const newsAPI = require('./index.js');
 describe ('API Endpoints', () => {
 
   let superAPI;
+  let done;
   
   beforeEach( async () => {
     
@@ -16,6 +18,7 @@ describe ('API Endpoints', () => {
   });
 
   afterEach( async () => {
+
   });
 
 
@@ -24,6 +27,8 @@ describe ('API Endpoints', () => {
     //pgController.latest.mockImplementation(() => ({id: null}));
 
     let rootRequest = await superAPI.get('/');
+
+    console.log(rootRequest);
 
     expect(rootRequest.statusCode).toBe(200); //error or not?
 
