@@ -27,7 +27,7 @@ CREATE TABLE articles(
 );
 
 
-\copy articles FROM '~/Code/Projects/codeChallenges/newsAPI/articles1.csv' WITH (DELIMITER',', FORMAT CSV, HEADER);
+\copy articles FROM 'articles1.csv' WITH (DELIMITER',', FORMAT CSV, HEADER);
 
 -- add index/keys to articles
 ALTER TABLE articles ADD PRIMARY KEY(article_id);
